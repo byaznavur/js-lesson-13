@@ -147,45 +147,204 @@
 
 // !CustumDate
 
-class CustumDate {
-  #day;
-  #month;
-  #year;
-  constructor(day, month, year) {
-    this.#day = day;
-    this.#month = month;
-    this.#year = year;
-  }
+// class CustumDate {
+//   #day;
+//   #month;
+//   #year;
+//   constructor(day, month, year) {
+//     this.#day = day;
+//     this.#month = month;
+//     this.#year = year;
+//   }
 
-  get day() {
-    return this.#day;
-  }
-  get month() {
-    return this.#month;
-  }
-  get year() {
-    return this.#year;
-  }
+//   get day() {
+//     return this.#day;
+//   }
+//   get month() {
+//     return this.#month;
+//   }
+//   get year() {
+//     return this.#year;
+//   }
 
-  allDateSet(a, b, c) {
-    this.#day = a;
-    this.#month = b;
-    this.#year = c;
-  }
+//   allDateSet(a, b, c) {
+//     this.#day = a;
+//     this.#month = b;
+//     this.#year = c;
+//   }
 
-  getISOdate(a, b, c) {
-    this.#day = a;
-    this.#month = b;
-    this.#year = c;
-    return `${this.#day >= 10 ? this.#day : "0" + this.#day}-${
-      this.#month >= 10 ? this.#month : "0" + this.#month
-    }-${this.#year}`;
-  }
-}
+//   getISOdate(a, b, c) {
+//     this.#day = a;
+//     this.#month = b;
+//     this.#year = c;
+//     return `${this.#day >= 10 ? this.#day : "0" + this.#day}-${
+//       this.#month >= 10 ? this.#month : "0" + this.#month
+//     }-${this.#year}`;
+//   }
+// }
 
-let dateRes = new CustumDate(25, 9, 2024);
-// dateRes.allDateSet(26, 9, 2024);
-console.log(dateRes.day);
-console.log(dateRes.month);
-console.log(dateRes.year);
-console.log(dateRes.getISOdate(2, 9, 2024));
+// let dateRes = new CustumDate(25, 9, 2024);
+// // dateRes.allDateSet(26, 9, 2024);
+// console.log(dateRes.day);
+// console.log(dateRes.month);
+// console.log(dateRes.year);
+// console.log(dateRes.getISOdate(2, 9, 2024));
+
+// ! Class
+
+// class Time {
+//   #hour;
+//   #minute;
+//   #second;
+//   constructor(hour, minute, second) {
+//     this.#hour = hour;
+//     this.#minute = minute;
+//     this.#second = second;
+//   }
+
+//   getHour() {
+//     return this.#hour;
+//   }
+//   getMinute() {
+//     return this.#minute;
+//   }
+//   getSecond() {
+//     return this.#second;
+//   }
+//   setTime(h, m, s) {
+//     this.#hour = h;
+//     this.#minute = m;
+//     this.#second = s;
+//   }
+
+//   nextSecond() {
+//     if (this.#second === 59) {
+//       this.#second = 0;
+//       if (this.#minute === 59) {
+//         this.#minute = 0;
+//         if (this.#hour === 23) {
+//           this.#hour = 0;
+//         } else {
+//           this.#hour++;
+//         }
+//       } else {
+//         this.#minute++;
+//       }
+//     } else {
+//       this.#second++;
+//     }
+//     return `${this.#hour < 10 ? "0" + this.#hour : this.#hour}:${
+//       this.#minute < 10 ? "0" + this.#minute : this.#minute
+//     }:${this.#second < 10 ? "0" + this.#second : this.#second}`;
+//   }
+
+//   previousSecond() {
+//     if (this.#second === 0) {
+//       this.#second = 59;
+//       if (this.#minute === 0) {
+//         this.#minute = 59;
+//         if (this.#hour === 0) {
+//           this.#hour = 23;
+//         } else {
+//           this.#hour--;
+//         }
+//       } else {
+//         this.#minute--;
+//       }
+//     } else {
+//       this.#second--;
+//     }
+//     return `${this.#hour < 10 ? "0" + this.#hour : this.#hour}:${
+//       this.#minute < 10 ? "0" + this.#minute : this.#minute
+//     }:${this.#second < 10 ? "0" + this.#second : this.#second}`;
+//   }
+// }
+
+// let timeRes = new Time(4, 45, 0);
+
+// console.log(timeRes.nextSecond());
+// console.log(timeRes.previousSecond());
+
+// class Shape {
+//   #color;
+//   #filled;
+//   constructor(color, filled) {
+//     this.#color = color;
+//     this.#filled = filled;
+//   }
+
+//   getColor() {
+//     return this.#color;
+//   }
+//   setColor(color) {
+//     this.#color = color;
+//   }
+//   isFilled() {
+//     return this.#filled;
+//   }
+//   setFilled(fill) {
+//     this.#filled = fill;
+//   }
+// }
+
+// let resSheap = new Shape("red", true);
+// resSheap.setColor("green");
+// resSheap.setFilled(false);
+// console.log(resSheap.getColor());
+// console.log(resSheap.isFilled());
+
+// // ! Circle
+
+// class Circle extends Shape {
+//   #radius;
+//   constructor(radius, color, isFilled) {
+//     super(color, isFilled);
+//     this.#radius = radius;
+//   }
+
+//   getRadius() {
+//     return this.#radius;
+//   }
+//   setRadius(radius) {
+//     this.#radius = radius;
+//   }
+//   getArea() {
+//     return Math.PI * Math.pow(this.#radius, 2);
+//   }
+//   getPerimeter() {
+//     return 2 * Math.PI * this.#radius;
+//   }
+// }
+
+// let resCircle = new Circle(12);
+
+// console.log(resCircle.getRadius());
+
+// class Rectangle extends Shape {
+//   #width;
+//   #height;
+//   constructor(width, height, color, isFilled) {
+//     super(color, isFilled);
+//     this.#width = width;
+//     this.#height = height;
+//   }
+//   getWidth() {
+//     return this.#width;
+//   }
+//   setWidth(width) {
+//     this.#width = width;
+//   }
+//   getHeight() {
+//     return this.#height;
+//   }
+//   setHeight(height) {
+//     this.#height = height;
+//   }
+//   getArea() {
+//     return this.#width * this.#height;
+//   }
+
+//   getPerimeter() {
+//     return 2 * (this.#width + this.#height);
+//   }
+// }
