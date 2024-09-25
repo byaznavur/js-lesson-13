@@ -9,7 +9,7 @@
 //     return this.firstName + " " + this.lastName;
 //   }
 // }
-
+// hello
 // let p1 = new Person("Abdulaziz", "Programmer");
 // let p1 = Person("Abdulaziz", "Programmer");
 
