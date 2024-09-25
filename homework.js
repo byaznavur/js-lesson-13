@@ -144,3 +144,48 @@
 // console.log(emp1.getFullName());
 // console.log(emp1.getAnnualSalary());
 // console.log(emp1.raiseSalary(10));
+
+// !CustumDate
+
+class CustumDate {
+  #day;
+  #month;
+  #year;
+  constructor(day, month, year) {
+    this.#day = day;
+    this.#month = month;
+    this.#year = year;
+  }
+
+  get day() {
+    return this.#day;
+  }
+  get month() {
+    return this.#month;
+  }
+  get year() {
+    return this.#year;
+  }
+
+  allDateSet(a, b, c) {
+    this.#day = a;
+    this.#month = b;
+    this.#year = c;
+  }
+
+  getISOdate(a, b, c) {
+    this.#day = a;
+    this.#month = b;
+    this.#year = c;
+    return `${this.#day >= 10 ? this.#day : "0" + this.#day}-${
+      this.#month >= 10 ? this.#month : "0" + this.#month
+    }-${this.#year}`;
+  }
+}
+
+let dateRes = new CustumDate(25, 9, 2024);
+// dateRes.allDateSet(26, 9, 2024);
+console.log(dateRes.day);
+console.log(dateRes.month);
+console.log(dateRes.year);
+console.log(dateRes.getISOdate(2, 9, 2024));
