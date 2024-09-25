@@ -1,30 +1,28 @@
-// ! CLASS
-// class Me {
-//   constructor(name, age) {
-//     this.name = name;
-//     this.age = age;
-//   }
-
-//   getInfo() {
-//     return `Name: ${this.name}, Age: ${this.age}`;
-//   }
-// }
-// let res = new Me("Azizbek", 19);
-// console.log(res.getInfo());
-
-//! CONSTRUCTOR
-// function Me(name, age) {
-//   this.name = name;
-//   this.age = age;
-
-//   if (!new.target) {
-//     return new Me(name, age);
-//   }
+// function Person(firstName, lastName) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
 // }
 
-// Me.prototype.getInfo = function () {
-//   return `Name: ${this.name}, Age: ${this.age}`;
+// Person.prototype.fullName = function () {
+//   return this.firstName + " " + this.lastName;
 // };
 
-// let res = new Me("Azizbek", 19);
+// let res = new Person("Abdulaziz", "Abduhakimov");
 // console.log(res);
+// console.log(Person.prototype);
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+let res = new Person("Abdulaziz", "Abduhakimov");
+console.log(res.firstName);
+console.log(res.lastName);
+console.log(res.fullName());

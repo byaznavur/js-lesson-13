@@ -35,7 +35,7 @@
 // console.log(r1.perimetr);
 // console.log(r1.area);
 
-// Class2
+//! Class2
 
 // let obj = {
 //   a: 1,
