@@ -350,113 +350,370 @@
 // }
 // !6. Person
 
+// class Person {
+//   #name;
+//   #address;
+//   constructor(name, address) {
+//     this.#name = name;
+//     this.#address = address;
+//   }
+
+//   getName() {
+//     return this.#name;
+//   }
+
+//   setName(a) {
+//     this.#name = a;
+//     return this.#name;
+//   }
+
+//   getAddress() {
+//     return this.#address;
+//   }
+
+//   setAddress(address) {
+//     this.#address = address;
+//     return this.#address;
+//   }
+// }
+
+// let res = new Person("Azizbek", "Tashkent");
+// res.setName("Abdulaziz");
+// console.log(res.getName());
+
+// class Student extends Person {
+//   #faculty;
+//   #year;
+//   #university;
+//   constructor(name, address, faculty, year, university) {
+//     super(name, address);
+//     this.#faculty = faculty;
+//     this.#year = year;
+//     this.#university = university;
+//   }
+
+//   getInfo() {
+//     return `Name: ${this.getName()}, Faculty: ${this.#faculty}, Year: ${
+//       this.#year
+//     }, University: ${this.#university}`;
+//   }
+
+//   setInfo(faculty, year, university) {
+//     this.#faculty = faculty;
+//     this.#year = year;
+//     this.#university = university;
+//   }
+
+//   getFaculty() {
+//     return this.#faculty;
+//   }
+
+//   getYear() {
+//     return this.#year;
+//   }
+
+//   getUniversity() {
+//     return this.#university;
+//   }
+
+//   setFaculty(faculty) {
+//     this.#faculty = faculty;
+//   }
+
+//   setYear(year) {
+//     this.#year = year;
+//   }
+
+//   setUniversity(university) {
+//     this.#university = university;
+//   }
+// }
+
+// let resStudent = new Student("Azizbek", "Tashkent", "Energetika", 2024, "TSTU");
+// console.log(resStudent.getInfo());
+
+// class Employee extends Person {
+//   #salary;
+//   #work;
+//   constructor(name, address, salary, work) {
+//     super(name, address);
+//     this.#salary = salary;
+//     this.#work = work;
+//   }
+
+//   getSalary() {
+//     return this.#salary;
+//   }
+
+//   setSalary(salary) {
+//     this.#salary = salary;
+//   }
+
+//   getWork() {
+//     return this.#work;
+//   }
+
+//   setWork(work) {
+//     this.#work = work;
+//   }
+// }
+
+// let resEmployee = new Employee("Abdulaziz", "Tashkent", 1200, "Developer");
+// console.log(resEmployee.getWork());
+
+//! 7.  Animal - superclass, others - subclasses
+
+// Superclass: Animal
+// class Animal {
+//   constructor(name, speed, weight) {
+//     this.name = name;
+//     this.speed = speed;
+//     this.weight = weight;
+//   }
+
+//   getInfo() {
+//     return `Name: ${this.name}, Speed: ${this.speed}, Weight: ${this.weight}`;
+//   }
+// }
+
+// // Subclass: Mammal
+// class Mammal extends Animal {
+//   #legs;
+
+//   constructor(name, speed, weight, legs) {
+//     super(name, speed, weight);
+//     this.#legs = legs;
+//   }
+
+//   getLegs() {
+//     return this.#legs;
+//   }
+
+//   setLegs(legs) {
+//     this.#legs = legs;
+//   }
+// }
+
+// // Subclass: Cat
+// class Cat extends Mammal {
+//   constructor(name, speed, weight, legs) {
+//     super(name, speed, weight, legs);
+//   }
+
+//   getSound() {
+//     return "Meow";
+//   }
+// }
+
+// // Subclass: Dog
+// class Dog extends Mammal {
+//   constructor(name, speed, weight, legs) {
+//     super(name, speed, weight, legs);
+//   }
+
+//   getSound() {
+//     return "Woof";
+//   }
+// }
+
+// // Subclass: Fish
+// class Fish extends Animal {
+//   #size;
+
+//   constructor(name, speed, weight, size) {
+//     super(name, speed, weight);
+//     this.#size = size;
+//   }
+
+//   getSize() {
+//     return this.#size;
+//   }
+
+//   setSize(size) {
+//     this.#size = size;
+//   }
+// }
+
+// // Subclass: Whale
+// class Whale extends Fish {
+//   constructor(name, speed, weight, size) {
+//     super(name, speed, weight, size);
+//   }
+
+//   getSound() {
+//     return "Poof";
+//   }
+// }
+
+// // Subclass: Shark
+// class Shark extends Fish {
+//   constructor(name, speed, weight, size) {
+//     super(name, speed, weight, size);
+//   }
+
+//   getSound() {
+//     return "Sheef";
+//   }
+// }
+
+// // Examples:
+
+// // Cat instance
+// let cat = new Cat("Kitty", 30, 5, 4);
+// console.log(cat.getInfo()); // Name: Kitty, Speed: 30, Weight: 5
+// console.log(cat.getSound()); // Meow
+
+// // Dog instance
+// let dog = new Dog("Buddy", 40, 20, 4);
+// console.log(dog.getInfo()); // Name: Buddy, Speed: 40, Weight: 20
+// console.log(dog.getSound()); // Woof
+
+// // Whale instance
+// let whale = new Whale("Big Whale", 10, 30000, 30);
+// console.log(whale.getInfo()); // Name: Big Whale, Speed: 10, Weight: 30000
+// console.log(whale.getSound()); // Poof
+
+// // Shark instance
+// let shark = new Shark("Great Shark", 50, 1000, 20);
+// console.log(shark.getInfo()); // Name: Great Shark, Speed: 50, Weight: 1000
+// console.log(shark.getSound()); // Sheef
+
+// ! 8 Static keyword
+
+// console.log(Object.keys(obj));
+// console.log(Object.values(obj));
+// console.log(Object.entries(obj));
+
+// Object.customKeys = function (obj) {
+//   let res = [];
+//   for (key in obj) {
+//     res.push(key);
+//   }
+//   return res;
+// };
+
+// console.log(Object.customKeys(obj));
+
+// Object.customValues = function (obj) {
+//   let res = [];
+//   for (let key in obj) {
+//     res.push(obj[key]);
+//   }
+//   return res;
+// };
+
+// console.log(Object.customValues(obj));
+// let obj = {
+//   a: 1,
+//   b: 2,
+//   c: 3,
+// };
+// Object.customEntries = function (obj) {
+//   let res = [];
+//   for (let key in obj) {
+//     res.push([key, obj[key]]);
+//   }
+//   return res;
+// };
+
+// console.log(Object.customEntries(obj));
+
+// let num = 123;
+
+// Number.customIsInteger = function (num) {
+//   let splitNum = num.toString().split(".");
+//   return +splitNum[1] === undefined ? false : true;
+// };
+
+// console.log(Number.customIsInteger(num));
+// let arr = { a: 32, b: 123 };
+// Array.customIsArray = function (arr) {
+//   return typeof arr === "object" && arr instanceof Array ? true : false;
+// };
+
+// console.log(Array.customIsArray(arr));
+
+// Array.isNumberArray = function (arr) {
+//   return arr.every((item) => typeof item === "number");
+// };
+
+// console.log(Array.isNumberArray(arr));
+// let arr = [1, 2, 3, 4, 123, 43, 341234, 52342];
+// Array.max = function (arr) {
+//   let maxNum = arr[0];
+
+//   for (let el of arr) {
+//     if (el > maxNum) {
+//       maxNum = el;
+//     }
+//   }
+//   return maxNum;
+// };
+
+// console.log(Array.max(arr));
+
+// let arr1 = [1, 2, 3, 4, 123, 43, 341234, 52342];
+// Array.min = function (arr1) {
+//   let minNum = arr1[0];
+
+//   for (let el of arr1) {
+//     if (el < minNum) {
+//       minNum = el;
+//     }
+//   }
+//   return minNum;
+// };
+
+// console.log(Array.min(arr1));
+
 class Person {
-  #name;
-  #address;
-  constructor(name, address) {
-    this.#name = name;
-    this.#address = address;
+  constructor(housePrice, housesNumber, carPrice, carsNumber, bankAccount) {
+    this.housePrice = housePrice;
+    this.housesNumber = housesNumber;
+    this.carPrice = carPrice;
+    this.carsNumber = carsNumber;
+    this.bankAccount = bankAccount;
   }
 
-  getName() {
-    return this.#name;
-  }
-
-  setName(a) {
-    this.#name = a;
-    return this.#name;
-  }
-
-  getAddress() {
-    return this.#address;
-  }
-
-  setAddress(address) {
-    this.#address = address;
-    return this.#address;
+  getWealth() {
+    return (
+      this.housePrice * this.housesNumber +
+      this.carsNumber * this.carPrice +
+      this.bankAccount
+    );
   }
 }
 
-let res = new Person("Azizbek", "Tashkent");
-res.setName("Abdulaziz");
-console.log(res.getName());
+let res = new Person(100000, 3, 50000, 7, 300000);
+console.log(res.getWealth());
 
-class Student extends Person {
-  #faculty;
-  #year;
-  #university;
-  constructor(name, address, faculty, year, university) {
-    super(name, address);
-    this.#faculty = faculty;
-    this.#year = year;
-    this.#university = university;
+class RichPerson extends Person {
+  constructor(
+    housePrice,
+    housesNumber,
+    carPrice,
+    carsNumber,
+    bankAccount,
+    companyPrice,
+    companiesNumber,
+    investigation
+  ) {
+    super(housePrice, housesNumber, carPrice, carsNumber, bankAccount);
+    this.companyPrice = companyPrice;
+    this.companiesNumber = companiesNumber;
+    this.investigation = investigation;
   }
 
-  getInfo() {
-    return `Name: ${this.getName()}, Faculty: ${this.#faculty}, Year: ${
-      this.#year
-    }, University: ${this.#university}`;
-  }
-
-  setInfo(faculty, year, university) {
-    this.#faculty = faculty;
-    this.#year = year;
-    this.#university = university;
-  }
-
-  getFaculty() {
-    return this.#faculty;
-  }
-
-  getYear() {
-    return this.#year;
-  }
-
-  getUniversity() {
-    return this.#university;
-  }
-
-  setFaculty(faculty) {
-    this.#faculty = faculty;
-  }
-
-  setYear(year) {
-    this.#year = year;
-  }
-
-  setUniversity(university) {
-    this.#university = university;
+  getWealth() {
+    return (
+      super.getWealth() +
+      this.companyPrice * this.companiesNumber +
+      this.investigation +
+      "$"
+    );
   }
 }
 
-let resStudent = new Student("Azizbek", "Tashkent", "Energetika", 2024, "TSTU");
-console.log(resStudent.getInfo());
+let richRes = new RichPerson(12, 12, 12, 31, 2, 12, 3, 312);
 
-class Employee extends Person {
-  #salary;
-  #work;
-  constructor(name, address, salary, work) {
-    super(name, address);
-    this.#salary = salary;
-    this.#work = work;
-  }
-
-  getSalary() {
-    return this.#salary;
-  }
-
-  setSalary(salary) {
-    this.#salary = salary;
-  }
-
-  getWork() {
-    return this.#work;
-  }
-
-  setWork(work) {
-    this.#work = work;
-  }
-}
-
-let resEmployee = new Employee("Abdulaziz", "Tashkent", 1200, "Developer");
-console.log(resEmployee.getWork());
+console.log(richRes.getWealth());
