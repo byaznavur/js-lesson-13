@@ -293,7 +293,7 @@
 // console.log(resSheap.getColor());
 // console.log(resSheap.isFilled());
 
-// // ! Circle
+// ! Circle
 
 // class Circle extends Shape {
 //   #radius;
@@ -348,3 +348,115 @@
 //     return 2 * (this.#width + this.#height);
 //   }
 // }
+// !6. Person
+
+class Person {
+  #name;
+  #address;
+  constructor(name, address) {
+    this.#name = name;
+    this.#address = address;
+  }
+
+  getName() {
+    return this.#name;
+  }
+
+  setName(a) {
+    this.#name = a;
+    return this.#name;
+  }
+
+  getAddress() {
+    return this.#address;
+  }
+
+  setAddress(address) {
+    this.#address = address;
+    return this.#address;
+  }
+}
+
+let res = new Person("Azizbek", "Tashkent");
+res.setName("Abdulaziz");
+console.log(res.getName());
+
+class Student extends Person {
+  #faculty;
+  #year;
+  #university;
+  constructor(name, address, faculty, year, university) {
+    super(name, address);
+    this.#faculty = faculty;
+    this.#year = year;
+    this.#university = university;
+  }
+
+  getInfo() {
+    return `Name: ${this.getName()}, Faculty: ${this.#faculty}, Year: ${
+      this.#year
+    }, University: ${this.#university}`;
+  }
+
+  setInfo(faculty, year, university) {
+    this.#faculty = faculty;
+    this.#year = year;
+    this.#university = university;
+  }
+
+  getFaculty() {
+    return this.#faculty;
+  }
+
+  getYear() {
+    return this.#year;
+  }
+
+  getUniversity() {
+    return this.#university;
+  }
+
+  setFaculty(faculty) {
+    this.#faculty = faculty;
+  }
+
+  setYear(year) {
+    this.#year = year;
+  }
+
+  setUniversity(university) {
+    this.#university = university;
+  }
+}
+
+let resStudent = new Student("Azizbek", "Tashkent", "Energetika", 2024, "TSTU");
+console.log(resStudent.getInfo());
+
+class Employee extends Person {
+  #salary;
+  #work;
+  constructor(name, address, salary, work) {
+    super(name, address);
+    this.#salary = salary;
+    this.#work = work;
+  }
+
+  getSalary() {
+    return this.#salary;
+  }
+
+  setSalary(salary) {
+    this.#salary = salary;
+  }
+
+  getWork() {
+    return this.#work;
+  }
+
+  setWork(work) {
+    this.#work = work;
+  }
+}
+
+let resEmployee = new Employee("Abdulaziz", "Tashkent", 1200, "Developer");
+console.log(resEmployee.getWork());
